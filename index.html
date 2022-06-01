@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Ardison-Gardner's Drum Kit</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
     <audio data-key="65" src="sounds/clap.wav"></audio>
     <script>
       const keys = document.querySelectorAll('.key');
@@ -19,9 +20,13 @@
         }
       });
       function removeTransition(e) {
-        console.log(e)
+        if (e.propertyName !== 'transition') {
+          return
+        } else {
+          console.log(e.propertyName)
+        }
       }
-      keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
     </script>
   </head>
   <body>
