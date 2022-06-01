@@ -11,7 +11,8 @@
       if (!audio) {
         return
       } else {
-        audio.play()
+        audio.currentTime = 0;
+        audio.play();
       }
     })
   </script>
